@@ -122,5 +122,24 @@ public class Individuo {
 		return custo;
 		 
 	}
+
+	public int quantCromDistintos() {
+		
+		int mDistCrom = idCs.get(0);
+		
+		for(Integer i : idCs){
+			
+			if(mDistCrom==quantCromossomo-1){
+				break;
+			}else{
+				if(i<mDistCrom){
+					mDistCrom =i;
+				}
+			}
+			
+		}
+		
+		return mDistCrom;
+	}
 	
 }
