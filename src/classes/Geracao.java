@@ -19,7 +19,7 @@ public class Geracao {
 		}
 	}
 	
-	List<Individuo> geracao;					// Matriz com os indivíduos e seus cromossomos
+	List<Individuo> individuos;					// Matriz com os indivíduos e seus cromossomos
 		
 	int numEstagnacao;							// Número máximo entre gerações em que não se tem um indivíduo melhor que o anterior
 	
@@ -35,11 +35,11 @@ public class Geracao {
 		
 		//Criando a matriz em que o número de linhas são a quantidade de indivíduos na geração
 		// e o número de colunas é os cromossomos de cada indivíduo.
-		geracao =  new ArrayList<Individuo>();
+		individuos =  new ArrayList<Individuo>();
 		
 		quantM = nMot;
 		
-		geracao = criarIndividuos();		
+		individuos = criarIndividuos();		
 	}
 	
 	private List<Individuo> criarIndividuos() {
@@ -69,7 +69,35 @@ public class Geracao {
 	 * @return int [][] : Matriz com todos os individuos da geração
 	 */
 	public List<Individuo> getIndividuos(){
-		return geracao;
+		return individuos;
+	}
+	
+	/*
+	 * Código do algoritmo genérico
+	 * 
+	 * @return List<Integer>: Lista com o melhor indivíduo encontrado
+	 */
+	public Individuo melhorIndividuo() {
+		
+		Individuo melhorInd = individuos.get(0);
+		
+		int custoMelhor =individuos.get(0).custo();
+		int custoCandidato=0;
+		for(Individuo i :individuos){
+			
+			custoCandidato = i.custo();
+			
+			if(custoCandidato<custoMelhor || (custoCandidato==custoMelhor && i.quantCromDistintos()<melhorInd.quantCromDistintos()) ){
+				melhorInd = i;
+				custoMelhor = i.custo();
+			}
+		}
+		
+		return melhorInd;
+	}
+
+	public void criarGeracao() {
+		
 	}
 	
 }

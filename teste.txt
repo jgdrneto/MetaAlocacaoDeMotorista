@@ -1,9 +1,10 @@
-Motoristas: 4
+Motoristas: 6
 
-Percurso 0: 80
-Percurso 1: 50
-Percurso 2: 80
-Percurso 3: 40
-Percurso 4: 30
-Percurso 5: 20
-Percurso 6: 70
+Percurso: 80
+Percurso: 50
+Percurso: 80
+Percurso: 40
+Percurso: 30
+Percurso: 20
+Percurso: 70
+Percurso: 60

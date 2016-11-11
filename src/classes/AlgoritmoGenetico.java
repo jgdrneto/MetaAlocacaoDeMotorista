@@ -19,7 +19,6 @@ public class AlgoritmoGenetico{
 		//Iniciando atributos
 		genes = new ArrayList<Gene>(genes);
 		quantCromossomos=quantCrom;
-		
 	}
 	
 	/*
@@ -87,6 +86,9 @@ public class AlgoritmoGenetico{
 	 */
 	private Individuo algoritmoGenetico() {
 		
+		//Criar a geração
+		geracao.criarGeracao();
+		
 		//Condição para criar novas gerações
 		while(!geracao.estagnada()){
 			
@@ -95,20 +97,7 @@ public class AlgoritmoGenetico{
 		}
 		
 		//Retorna o melhor indivíduo da geração estagnada
-		return melhorIndividuo(geracao);
-	}
-
-	private Individuo melhorIndividuo(Geracao geracao) {
-		
-		Individuo lista = geracao.getIndividuos().get(0);
-		
-		for(int l=0;l<Geracao.CONSTANTES.NUMINDIVIDUOS.VALOR;l++){
-			for(int c=0;c<10;c++){
-					
-			}
-		}
-		
-		return lista;
+		return geracao.melhorIndividuo();
 	}
 	
 }

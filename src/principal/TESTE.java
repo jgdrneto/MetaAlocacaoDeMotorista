@@ -6,11 +6,12 @@ import java.util.List;
 import classes.Gene;
 import classes.Individuo;
 import util.Algoritmo;
+import util.Interpretador;
 
 public class TESTE {
 
 	public static void main(String[] args) {
-				
+		/*		
 		List<Gene> genes = new ArrayList<Gene>(); 
 		
 		genes.add(new Gene(80)); 
@@ -29,7 +30,13 @@ public class TESTE {
 		Individuo indCompleto = Algoritmo.solucaoHeuristica(ind);
 		
 		System.out.println(indCompleto.toString());
+		*/
 		
+		Interpretador interpretador = new Interpretador("teste.txt");
+		
+		System.out.println("Quant Motorista: " + interpretador.getQuantCromossomos());
+		
+		System.out.println(interpretador.getGenes());
 	}
 
 }
